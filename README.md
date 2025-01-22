@@ -563,4 +563,117 @@ You should see the message "Welcome to My Website Hosted on Apache! 🚀".
 
 ---
 
+# AWS-EC2-SETUP-WEBSERVER-WINDOWS
+
+---
+
+# 🚀 Hosting a Website on a Windows EC2 Instance
+
+This guide will help you set up a **web server** on an **Amazon EC2 Windows instance** using **IIS (Internet Information Services)**. By the end of this tutorial, you’ll have a simple website hosted and accessible via your instance’s public IP address.
+
+---
+
+## 🖊️ Prerequisites
+
+Ensure you have the following:
+
+1. ✅ An **AWS account** and access to the **AWS Management Console**.
+2. ✅ A **running EC2 instance** with **Windows Server** (e.g., Windows Server 2019/2022).
+3. ✅ **RDP access** to your EC2 instance using the private key and administrator credentials.
+4. ✅ A **Security Group** allowing **HTTP (port 80)** and **RDP (port 3389)** traffic.
+
+If you don't have an EC2 instance yet, create one with the **Windows Server AMI** in the **default VPC**.
+
+---
+
+## 🛠️ Step-by-Step Guide
+
+### Step 1: Connect to Your Windows EC2 Instance via RDP
+
+1. In the **AWS Management Console**, navigate to **EC2** > **Instances**.
+2. Select your Windows instance and click **Connect**.
+3. Under the **RDP Client** tab, download the **Remote Desktop File** and note down the public IP address.
+4. Decrypt the **administrator password** using your private key file.
+5. Open the downloaded RDP file, enter the administrator credentials, and connect to the instance.
+
+---
+
+### Step 2: Install IIS (Internet Information Services)
+
+Once connected to the instance:
+
+1. Open **Server Manager** from the **Start Menu**.
+2. Click on **Manage** > **Add Roles and Features**.
+3. In the **Add Roles and Features Wizard**:
+   - **Installation Type**: Select **Role-based or feature-based installation**.
+   - **Server Selection**: Select your EC2 instance.
+   - **Server Roles**: Check **Web Server (IIS)** and click **Next**.
+4. Click **Next** until you reach the **Confirmation** page, then click **Install**.
+5. Wait for the installation to complete and close the wizard.
+
+---
+
+### Step 3: Start IIS and Test the Default Website
+
+1. Open a web browser within the Windows instance.
+2. Enter `http://localhost` in the address bar.
+3. You should see the default IIS welcome page, indicating that IIS is running.
+
+---
+
+### Step 4: Adjust Security Group Rules for HTTP Traffic
+
+Allow **HTTP (port 80)** traffic by modifying your instance’s **Security Group**:
+
+1. In the **AWS Management Console**, navigate to **EC2** > **Security Groups**.
+2. Select the Security Group associated with your EC2 instance.
+3. Click **Inbound rules** > **Edit inbound rules**.
+4. Add the following rule:
+   - **Type**: HTTP
+   - **Port Range**: 80
+   - **Source**: Anywhere (0.0.0.0/0)
+5. Save the rules.
+
+---
+
+### Step 5: Upload Your Website Files
+
+To replace the default IIS webpage with your own content:
+
+1. Open **File Explorer** and navigate to the IIS root directory:
+   ```text
+   C:\inetpub\wwwroot
+   ```
+2. Delete or rename the default `iisstart.html` file.
+3. Copy your website files (e.g., `index.html`) into this directory.
+
+---
+
+### Step 6: Test Your Website
+
+1. Open your web browser on your local machine.
+2. Enter your EC2 instance’s **public IP address** in the address bar:
+
+   ```text
+   http://your-ec2-public-ip
+   ```
+
+3. You should see your custom webpage.
+
+---
+
+## ✅ Conclusion
+
+🎉 **Congratulations!** You’ve successfully set up a **web server** on your **Windows EC2 instance** using IIS. Your website is now accessible via the instance’s public IP address.
+
+---
+
+### 🚨 Troubleshooting Tips
+
+- **Website not loading?** Ensure port **80** is open in the instance’s Security Group.
+- **Can’t connect via RDP?** Verify that port **3389** (RDP) is open and that you’re using the correct private key and administrator password.
+- **Custom website not displaying?** Check that your website files are in the `C:\inetpub\wwwroot` directory.
+
+---
+
 
