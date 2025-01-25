@@ -364,6 +364,7 @@ You should see the message "Welcome to My Website Hosted on Apache! 🚀".
 This guide will help you set up an **Apache** web server on an **Amazon EC2 instance** running **Amazon Linux** or **Ubuntu**. By the end of this tutorial, you’ll have a simple website hosted and accessible via your public IP address.
 
 ---
+![02_AWS-EC2--UBUNTU-APACHE](https://github.com/user-attachments/assets/c286efc9-954b-4e32-ac33-dae6166256b1)
 
 ## 🖊️ Prerequisites
 
@@ -575,6 +576,7 @@ You should see the message "Welcome to My Website Hosted on Apache! 🚀".
 This guide will help you set up a **web server** on an **Amazon EC2 Windows instance** using **IIS (Internet Information Services)**. By the end of this tutorial, you’ll have a simple website hosted and accessible via your instance’s public IP address.
 
 ---
+
 
 ## 🖊️ Prerequisites
 
