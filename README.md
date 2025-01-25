@@ -188,6 +188,7 @@ You should see the message "Welcome to My Website Hosted on Nginx! 🚀".
 This guide will help you set up an **Apache** web server on an **Amazon EC2 instance** running **Amazon Linux**. By the end of this tutorial, you’ll have a simple website hosted and accessible via your public IP address.
 
 ---
+![AWS-EC2-APACHE](https://github.com/user-attachments/assets/09f55d79-57c6-4338-baeb-50ad0933b37f)
 
 ## 🖊️ Prerequisites
 
