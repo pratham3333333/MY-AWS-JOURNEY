@@ -8,6 +8,8 @@ This guide will walk you through the process of setting up an **Nginx** web serv
 
 ---
 
+![AWS-EC2-NGINX](https://github.com/user-attachments/assets/826e41f8-e877-4072-bd96-4ed64316ca97)
+
 ## 🖊️ Prerequisites
 
 Ensure you have the following:
